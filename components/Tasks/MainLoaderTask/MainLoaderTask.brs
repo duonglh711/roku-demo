@@ -12,6 +12,7 @@ sub GetContent()
     xfer = CreateObject("roURLTransfer")
     xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
     xfer.SetURL("https://jonathanbduval.com/roku/feeds/roku-developers-feed-v1.json")
+    rsp = xfer.GetToString()
     rootChildren = []
     rows = {}
 

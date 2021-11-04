@@ -24,7 +24,7 @@
 			translation="[130,220]"
 	    />
         <RowList
-            itemComponentName="RowListItemComponent"
+            itemComponentName="RowListItem"
             id="rowList"
             translation="[80,350]"
             numRows="2"
