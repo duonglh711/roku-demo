@@ -9,10 +9,12 @@ end sub
 
 sub GetContent()
     ' request the content feed from the API
-    xfer = CreateObject("roURLTransfer")
-    xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
-    xfer.SetURL("https://jonathanbduval.com/roku/feeds/roku-developers-feed-v1.json")
-    rsp = xfer.GetToString()
+    ' xfer = CreateObject("roURLTransfer")
+    ' xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
+    ' xfer.SetURL("https://jonathanbduval.com/roku/feeds/roku-developers-feed-v1.json")
+    ' rsp = xfer.GetToString()
+
+    rsp = ReadAsciiFile("pkg:/source/mockdata.json")
     rootChildren = []
     rows = {}
 
@@ -61,6 +63,9 @@ function GetItemData(video as Object) as Object
     if video.content <> invalid
         ' populate length of content to be displayed on the GridScreen
         item.length = video.content.duration
+        ' populate meta-data for playback
+        item.url = video.content.videos[0].url
+        item.streamFormat = video.content.videos[0].videoType
     end if
     return item
 end function
