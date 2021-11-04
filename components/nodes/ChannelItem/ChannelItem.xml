@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<component name="ChannelItem" extends="ContentNode">
+ 
+<interface> 
+  <field id="uri" type="string"   />
+  <field id="channelName" type="string"  />
+</interface>
+
+<script type="text/brightscript" uri="ChannelItem.brs"/>
+
+<children>
+    <Poster id="channelImage" width="100" height="100" uri="pkg:/images/iron-man-small.jpg"/>
+    <Label id="channelName" width="200" height="30" text="Marvel"/>
+</children>
+
+</component>
