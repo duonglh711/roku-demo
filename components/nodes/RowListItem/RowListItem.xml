@@ -7,14 +7,25 @@
     </interface>
     <script type="text/brightscript" uri="RowListItem.brs" />
     <children>
-        <!-- Set loadWidth/loadHeight and loadDisplayMode for better performance -->
+        <Label
+            id="label"
+            width="320"
+            height="30"
+            text = "Title"
+        />
         <Poster
+            id="poster"
+            width="320"
+            height="150"
+            translation = "[0,30]"
+        />
+        <!-- <Poster
             id="poster"
             loadDisplayMode="scaleToFit"
             width="320"
             height="180"
             loadWidth="320"
             loadHeight="180"
-        />
+        /> -->
     </children>
 </component>

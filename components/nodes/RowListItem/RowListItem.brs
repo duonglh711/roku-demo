@@ -1,4 +1,5 @@
-' Copyright (c) 2020 Roku, Inc. All rights reserved.
+sub Init()
+end sub
 
 sub OnContentSet() ' invoked when item metadata retrieved
     content = m.top.itemContent
