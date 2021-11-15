@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="Demo" extends="Scene">
+    <script type="text/brightscript" uri="Demo.brs" />
+    <children>
+        <GridDemo id="grid" numColumns="5" numRows="5"/>
+
+        <Poster   
+            id = "button"
+            width = "150" 
+            height = "100" 
+            uri="pkg:/images/simple-1.9.png"/>
+
+    </children>
+</component>

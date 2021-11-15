@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="GridDemo" extends="Group">
+    <interface>
+        <field id="numColumns" type="int" value="5" onChange="onContentChange"/>
+        <field id="numRows" type="int" value="5" onChange="onContentChange"/>
+    </interface>
+    
+    <script type="text/brightscript" uri="GridDemo.brs" />
+    <children>
+
+    </children>
+</component>
