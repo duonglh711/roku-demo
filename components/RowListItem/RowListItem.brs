@@ -3,6 +3,6 @@ sub init()
 end sub
 
 sub itemContentChanged()
-	m.itemPoster.uri = m.top.itemContent.HDPOSTERURL
+	m.itemPoster.uri = m.top.itemContent.hdposterurl
 end sub
 

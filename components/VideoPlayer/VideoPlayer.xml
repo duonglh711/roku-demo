@@ -1,12 +1,12 @@
 <?xml version = "1.0" encoding = "utf-8" ?> 
 <component name = "VideoPlayer" extends = "Group" >
 <interface>
-      <field id="content" type="node" />
+      <field id="playerContent" type="node"/>
 </interface>
 <script type = "text/brightscript"  uri="VideoPlayer.brs"/>
 <children >
       <!-- from youtube -->
-      <Video id = "exampleVideo"/>
+      <Video id = "video"/>
       <Rectangle id = "rectangleDuration" />
       <Rectangle id = "rectanglePosition" />
       <Poster width="10" height="10" id="circlePosition" uri="pkg:/images/red-circle.png"/>

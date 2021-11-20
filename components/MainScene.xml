@@ -3,8 +3,30 @@
     <script type="text/brightscript" uri="MainScene.brs"/>
 
     <children>
+		<Poster 
+			id="videoThumbnail" 
+			width ="150"
+			height="150"
+			loadDisplayMode = "scaleToFit"
+			translation="[20,10]"/>
+        <Label
+	        id="titleLabel"
+			translation="[180,40]"
+	    />
+        <Label
+	        id="descriptionLabel"
+	        wrap="true"
+	        numLines="3"
+			translation="[180, 80]"
+	    />
+
         <ZoomRowList id="zoomRowList"/>
+		<Poster 
+			opacity=".1" 
+			id="background" 
+			loadDisplayMode = "scaleToZoom"/>
         <VideoPlayer id="videoPlayer" scale="[0.3,0.3]"/>
+
         <Animation id="fullScreenVideoAnimation"
 			duration="0.5"
 			repeat="false"

@@ -1,14 +1,7 @@
 sub init()
-    videocontent = createObject("RoSGNode", "ContentNode")
-    videocontent.title = "Example Video"
-    videocontent.streamformat = "mp4"
-    videocontent.url = "pkg:/demodata/video/demo1.mp4"
-
-    m.video = m.top.findNode("exampleVideo")
-    m.video.content = videocontent
+    m.video = m.top.findNode("video")
     m.video.observeField("position", "onPositionChange")
-    ' m.video.setFocus(true)
-    m.video.control = "play"
+    m.top.observeField("playerContent", "onPlayerContentChange")
     m.positionLabel = m.top.findNode("positionLabel")
     m.rectangleDuration = m.top.findNode("rectangleDuration")
     m.rectanglePosition = m.top.findNode("rectanglePosition")
@@ -37,6 +30,16 @@ sub init()
     m.playIcon.translation = [10, m.height - 40]
     m.pauseIcon.translation = [10, m.height - 40]
   end sub
+
+sub onPlayerContentChange(event)
+    videoItem = event.getData()
+    videocontent = createObject("RoSGNode", "ContentNode")
+    videocontent.title = videoItem.title
+    videocontent.streamformat = videoItem.videoType
+    videocontent.url = videoItem.videoUrl
+    m.video.content = videocontent
+    m.video.control = "play"
+end sub
 
 sub onPositionChange()
     ' m.rectanglePosition.translation = [cint(m.video.position*m.rectangleDuration.width/m.video.duration), m.rectangleDuration.translation[1]-cint(m.rectanglePosition.height/2 - m.rectangleDuration.height/2)]
