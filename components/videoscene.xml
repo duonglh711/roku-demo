@@ -7,18 +7,26 @@
   <script type = "text/brightscript"  uri="videoscene.brs"/>
 
   <children >
-    <Video id = "exampleVideo"/>
-    <Label id = "contentLabel" 
+    <Video id="exampleVideo"/>
+    <Label id="contentLabel" 
           translation = "[150,150]"
           horizAlign="center"
           vertAlign="center"
           text="Playing"/>
-    <Label id = "positionLabel" 
+
+    <Label id="positionLabel" 
           translation = "[150,180]"
           horizAlign="center"
           vertAlign="center"/>
-    <Label id = "durationLabel" 
+
+    <Label id="durationLabel" 
           translation = "[150,210]"
+          horizAlign="center"
+          vertAlign="center"/>
+
+   <Poster id="image" 
+            uri="pkg:/images/rsgde_mm_focus_hd.jpg"
+          translation = "[500,400]"
           horizAlign="center"
           vertAlign="center"/>
 
