@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="VideoPlayer" extends="Group">
+	<interface>
+		<field id="playerContent" type="node" />
+	</interface>
+	<script type="text/brightscript" uri="VideoPlayer.brs" />
+	<children>
+		<!-- from youtube -->
+		<Video id="video" />
+		<Rectangle id="rectangleDuration" />
+		<Rectangle id="rectanglePosition" />
+		<Poster width="10" height="10" id="circlePosition" uri="pkg:/images/red-circle.png" />
+		<Poster id="playIcon" width="30" height="30" uri="pkg:/images/play.png" />
+		<Poster id="pauseIcon" visible="false" width="30" height="30" uri="pkg:/images/pause.png" />
+		<Label id="positionLabel" horizAlign="center" vertAlign="center" />
+	</children>
+</component>
