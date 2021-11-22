@@ -1,8 +1,8 @@
 sub init()
-    m.itemPoster  = m.top.findNode("itemPoster")
+    m.itemPoster = m.top.findNode("itemPoster")
 end sub
 
 sub itemContentChanged()
-	m.itemPoster.uri = m.top.itemContent.hdposterurl
+    m.itemPoster.uri = m.top.itemContent.hdposterurl
 end sub
 

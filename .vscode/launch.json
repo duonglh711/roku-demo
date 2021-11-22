@@ -17,7 +17,7 @@
                 "source/**/*.*",
                 "components/**/*.*",
                 "images/**/*.*",
-                "demodata/**/*.*"
+                "mockdata/**/*.*"
             ],
             "enableDebuggerAutoRecovery": false,
             "stopDebuggerOnAppExit": false

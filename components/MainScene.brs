@@ -6,19 +6,19 @@ sub init()
     m.titleLabel = m.top.findNode("titleLabel")
     m.descriptionLabel = m.top.findNode("descriptionLabel")
     m.videoThumbnail = m.top.findNode("videoThumbnail")
-    m.titleLabel.font.size=20
-    m.descriptionLabel.font.size=15
-    
+    m.titleLabel.font.size = 20
+    m.descriptionLabel.font.size = 15
+
     info = CreateObject("roDeviceInfo")
     displaySize = info.GetDisplaySize()
     m.width = displaySize.w
     m.height = displaySize.h
 
-    m.titleLabel.width = cint(m.width - 180 - m.width*.3)
-    m.descriptionLabel.width = cint(m.width - 180 - m.width*.3)
+    m.titleLabel.width = cint(m.width - 180 - m.width * .3)
+    m.descriptionLabel.width = cint(m.width - 180 - m.width * .3)
 
     m.zoomRowList.setFields({
-        translation: [30, cint(m.height*.3)],  'because scale video to 0.3
+        translation: [30, cint(m.height * .3)], 'because scale video to 0.3
         itemComponentName: "RowListItem",
     })
 
@@ -35,15 +35,15 @@ sub init()
 
     m.fullScreenVideoAnimation = m.top.findNode("fullScreenVideoAnimation")
     m.minimizeVideoAnimation = m.top.findNode("minimizeVideoAnimation")
-    m.top.findNode("translationVideoFullScreen").keyValue=[ [cint(m.width - m.width*.3), 0], [0, 0]]
-    m.top.findNode("translationVideoMinimize").keyValue=[ [0, 0], [cint(m.width - m.width*.3), 0]]
+    m.top.findNode("translationVideoFullScreen").keyValue = [[cint(m.width - m.width * .3), 0], [0, 0]]
+    m.top.findNode("translationVideoMinimize").keyValue = [[0, 0], [cint(m.width - m.width * .3), 0]]
     m.minimizeVideoAnimation.control = "start"
     m.background.width = m.width
     m.background.height = m.height
 end sub
 
 sub getListItem()
-    if m.mainLoaderTask.content=invalid
+    if m.mainLoaderTask.content = invalid
         ? "invalid readerTask.content"
     else
         m.zoomRowList.content = m.mainLoaderTask.content
@@ -52,7 +52,7 @@ sub getListItem()
 end sub
 
 sub onRowSelected()
-    ? "onRowSelected is: " m.zoomRowList.rowSelected 
+    ? "onRowSelected is: " m.zoomRowList.rowSelected
     m.previewVideo = false
     m.fullScreenVideoAnimation.control = "start"
     m.videoPlayer.setFocus(true)
@@ -60,7 +60,7 @@ end sub
 
 sub onItemFocused(event)
     index = event.getData()
-    ? "rowItemFocused is: " + index[0].toStr() + " " + index[1].toStr()    
+    ? "rowItemFocused is: " + index[0].toStr() + " " + index[1].toStr()
     if m.previewVideo = false
         m.minimizeVideoAnimation.control = "start"
         m.previewVideo = true

@@ -23,13 +23,13 @@ sub init()
         height: 6,
         color: "#ff0000",
     })
-    m.positionLabel.translation=[50, m.height - 30]
+    m.positionLabel.translation = [50, m.height - 30]
     m.positionLabel.font.size = 15
-    m.rectanglePosition.translation = [0, m.rectangleDuration.translation[1] - cint(m.rectanglePosition.height/2 - m.rectangleDuration.height/2)]
-    m.circlePosition.translation = [0, m.rectangleDuration.translation[1] - cint(m.circlePosition.height/2 - m.rectangleDuration.height/2)]
+    m.rectanglePosition.translation = [0, m.rectangleDuration.translation[1] - cint(m.rectanglePosition.height / 2 - m.rectangleDuration.height / 2)]
+    m.circlePosition.translation = [0, m.rectangleDuration.translation[1] - cint(m.circlePosition.height / 2 - m.rectangleDuration.height / 2)]
     m.playIcon.translation = [10, m.height - 40]
     m.pauseIcon.translation = [10, m.height - 40]
-  end sub
+end sub
 
 sub onPlayerContentChange(event)
     videoItem = event.getData()
@@ -43,8 +43,8 @@ end sub
 
 sub onPositionChange()
     ' m.rectanglePosition.translation = [cint(m.video.position*m.rectangleDuration.width/m.video.duration), m.rectangleDuration.translation[1]-cint(m.rectanglePosition.height/2 - m.rectangleDuration.height/2)]
-    m.rectanglePosition.width = cint(m.video.position*m.rectangleDuration.width/m.video.duration)
-    m.circlePosition.translation = [m.rectanglePosition.width - cint(m.circlePosition.width/2), m.circlePosition.translation[1]]
+    m.rectanglePosition.width = cint(m.video.position * m.rectangleDuration.width / m.video.duration)
+    m.circlePosition.translation = [m.rectanglePosition.width - cint(m.circlePosition.width / 2), m.circlePosition.translation[1]]
 
     m.positionLabel.text = timeToStr(m.video.position, m.video.duration)
 end sub
@@ -54,10 +54,10 @@ function timeToStr(position as integer, duration as integer) as string
     if position mod 60 < 10 then positionDot = ":0"
     durationDot = ":"
     if duration mod 60 < 10 then durationDot = ":0"
-    return (cint(position/60)).toStr()+positionDot+(position mod 60).toStr()+"/"+(cint(duration/60)).toStr()+durationDot+(duration mod 60).toStr()
+    return (cint(position / 60)).toStr() + positionDot + (position mod 60).toStr() + "/" + (cint(duration / 60)).toStr() + durationDot + (duration mod 60).toStr()
 end function
 
-function OnkeyEvent(key as String, press as Boolean) as Boolean
+function OnkeyEvent(key as string, press as boolean) as boolean
     result = true
     ? "VideoPlayer key: " key " press: " press
     if press
@@ -77,13 +77,13 @@ function OnkeyEvent(key as String, press as Boolean) as Boolean
 end function
 
 sub pauseVideo()
-    m.playIcon.visible=false
-    m.pauseIcon.visible=true
+    m.playIcon.visible = false
+    m.pauseIcon.visible = true
     m.video.control = "pause"
 end sub
 
 sub resumeVideo()
-    m.playIcon.visible=true
-    m.pauseIcon.visible=false
+    m.playIcon.visible = true
+    m.pauseIcon.visible = false
     m.video.control = "resume"
 end sub
