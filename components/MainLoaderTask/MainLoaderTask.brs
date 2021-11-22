@@ -4,9 +4,14 @@ end sub
 
 
 sub getContent()
-	rsp = ReadAsciiFile("pkg:/mockdata/mockdata.json")
+	xfer = CreateObject("roURLTransfer")
+	xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
+	xfer.SetURL("https://lhduong1999-roku-demo.s3.ap-southeast-1.amazonaws.com/mockdata.json")
+	rsp = xfer.GetToString()
+
 	rootChildren = []
 	json = ParseJson(rsp)
+
 	if json <> invalid
 		for each category in json
 			value = json.Lookup(category)

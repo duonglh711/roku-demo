@@ -12,13 +12,6 @@
             "host": "192.168.0.183",
             "password": "0000",
             "rootDir": "${workspaceFolder}",
-            "files":[
-                "manifest",
-                "source/**/*.*",
-                "components/**/*.*",
-                "images/**/*.*",
-                "mockdata/**/*.*"
-            ],
             "enableDebuggerAutoRecovery": false,
             "stopDebuggerOnAppExit": false
         }
