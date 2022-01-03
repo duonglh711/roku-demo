@@ -6,7 +6,7 @@ end sub
 sub getContent()
 	xfer = CreateObject("roURLTransfer")
 	xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
-	xfer.SetURL("https://lhduong1999-roku-demo.s3.ap-southeast-1.amazonaws.com/mockdata.json")
+	xfer.SetURL("https://duonglh711-roku-demo.s3.us-east-2.amazonaws.com/feed.json")
 	rsp = xfer.GetToString()
 
 	rootChildren = []

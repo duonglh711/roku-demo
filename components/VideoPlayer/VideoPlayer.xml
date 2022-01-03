@@ -9,7 +9,7 @@
 		<Video id="video" />
 		<Rectangle id="rectangleDuration" />
 		<Rectangle id="rectanglePosition" />
-		<Poster width="10" height="10" id="circlePosition" uri="pkg:/images/red-circle.png" />
+		<Poster width="10" height="10" id="circlePosition" uri="pkg:/images/circle-red.png" />
 		<Poster id="playIcon" width="30" height="30" uri="pkg:/images/play.png" />
 		<Poster id="pauseIcon" visible="false" width="30" height="30" uri="pkg:/images/pause.png" />
 		<Label id="positionLabel" horizAlign="center" vertAlign="center" />
